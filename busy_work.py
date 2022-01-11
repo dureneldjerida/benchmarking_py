@@ -37,6 +37,7 @@ def busywork(arg):
     try:
         users_list = []
         with open("/Users/aaatipamula/Documents/local_projects/usernames.txt", "r") as f:
+            user = f.readlines()
             for x in user:
                 x_a = x.replace('\n', '')
             with open("/Users/aaatipamula/Documents/local_projects/files_cp.txt", "r") as f:
@@ -46,7 +47,7 @@ def busywork(arg):
                     count += 1
                     print(f"{random.choice(triggers)} {y_a} for {x_a}...")
                     time.sleep(random.uniform(0,arg))
-                    user = f.readlines()
+                    
 
         tim = round(time.perf_counter()-start_time, 2)
         print(f"\nYou finished printing out all the combinations!\n{count:,} lines were printed!\nIt took {delta_time(tim)}\n")
