@@ -34,20 +34,19 @@ def delta_time(arg):
 def busywork(arg):
     start_time = time.perf_counter()
     global count
-    
     try:
         users_list = []
         with open("/Users/aaatipamula/Documents/local_projects/usernames.txt", "r") as f:
             user = f.readlines()
-            for x in user:
-                x_a = x.replace('\n', '')
             with open("/Users/aaatipamula/Documents/local_projects/files_cp.txt", "r") as f:
                 files = f.readlines()
-                for y in files:
-                    y_a = y.replace('\n', '')
-                    count += 1
-                    print(f"{random.choice(triggers)} {y_a} for {x_a}...")
-                    time.sleep(random.uniform(0,arg))
+                for x in user:
+                    x_a = x.replace('\n', '')
+                    for y in files:
+                        y_a = y.replace('\n', '')
+                        count += 1
+                        print(f"{random.choice(triggers)} {y_a} for {x_a}...")
+                        time.sleep(random.uniform(0,arg))
                     
 
         tim = round(time.perf_counter()-start_time, 2)
