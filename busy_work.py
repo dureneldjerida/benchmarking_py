@@ -47,8 +47,6 @@ def busywork(arg):
                     print(f"{random.choice(triggers)} {y_a} for {x_a}...")
                     time.sleep(random.uniform(0,arg))
                     user = f.readlines()
-        
-
 
         tim = round(time.perf_counter()-start_time, 2)
         print(f"\nYou finished printing out all the combinations!\n{count:,} lines were printed!\nIt took {delta_time(tim)}\n")
