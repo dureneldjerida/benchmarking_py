@@ -33,7 +33,8 @@ def delta_time(arg):
 
 def busywork(arg):
     start_time = time.perf_counter()
-
+    global count
+    
     try:
         users_list = []
         with open("/Users/aaatipamula/Documents/local_projects/usernames.txt", "r") as f:
