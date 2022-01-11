@@ -30,7 +30,7 @@ def speed():
     
     except KeyboardInterrupt:
         print("\nPlease enter a valid argument.\n")
-            speed()
+        gi speed()
 
 def delta_time(arg):
     if arg >= 60:
