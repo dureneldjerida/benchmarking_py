@@ -6,16 +6,6 @@ import concurrent.futures
 triggers = ["processing", "updating", "creating", "resolving", "downloading"]
 count = 0
 
-def start():
-    arg = input("Would you like to start? [y/n]: ")
-    if arg == "yes" or arg == "y":
-        speed()
-    elif arg == "no" or arg == "n":
-        print("\n")
-        exit()
-    else:
-        print("\nPlease enter a valid argument.\n")
-        start()
 
 def speed():
     arg2 = input("Slow or way to fast to stop? [s/f]: ")
@@ -44,26 +34,21 @@ def delta_time(arg):
 def busywork(arg):
     start_time = time.perf_counter()
 
-    def iterate(x_a):
-        global count
-        with open("/Users/aaatipamula/Documents/local_projects/files_cp.txt", "r") as f:
-            files = f.readlines()
-            for y in files:
-                y_a = y.replace('\n', '')
-                count += 1
-                print(f"{random.choice(triggers)} {y_a} for {x_a}...")
-                time.sleep(random.uniform(0,arg))
-
     try:
         users_list = []
         with open("/Users/aaatipamula/Documents/local_projects/usernames.txt", "r") as f:
-            user = f.readlines()
             for x in user:
                 x_a = x.replace('\n', '')
-                users_list.append(x_a)
+            with open("/Users/aaatipamula/Documents/local_projects/files_cp.txt", "r") as f:
+                files = f.readlines()
+                for y in files:
+                    y_a = y.replace('\n', '')
+                    count += 1
+                    print(f"{random.choice(triggers)} {y_a} for {x_a}...")
+                    time.sleep(random.uniform(0,arg))
+                    user = f.readlines()
         
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                executor.map(iterate, users_list)
+
 
         tim = round(time.perf_counter()-start_time, 2)
         print(f"\nYou finished printing out all the combinations!\n{count:,} lines were printed!\nIt took {delta_time(tim)}\n")
@@ -73,4 +58,4 @@ def busywork(arg):
         start()
 
 if __name__ == "__main__":
-    start()
+    speed()
