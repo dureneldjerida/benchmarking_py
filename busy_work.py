@@ -18,14 +18,19 @@ def start():
         start()
 
 def speed():
-    arg2 = input("Slow or way to fast to stop? [s/f]: ")
-    if arg2 == "s" or arg2 == "slow":
-        busywork(0.1)
-    elif arg2 == "f" or arg2 == "fast":
-        busywork(0)
-    else:
+    try: 
+        arg2 = input("Slow or way to fast to stop? [s/f]: ")
+        if arg2 == "s" or arg2 == "slow":
+            busywork(0.1)
+        elif arg2 == "f" or arg2 == "fast":
+            busywork(0)
+        else:
+            print("\nPlease enter a valid argument.\n")
+            speed()
+    
+    except KeyboardInterrupt:
         print("\nPlease enter a valid argument.\n")
-        speed()
+            speed()
 
 def delta_time(arg):
     if arg >= 60:
@@ -73,4 +78,4 @@ def busywork(arg):
         start()
 
 if __name__ == "__main__":
-    start()
+    speed()
