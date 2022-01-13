@@ -51,7 +51,9 @@ def busywork(arg):
 
         tim = round(time.perf_counter()-start_time, 2)
         print(f"\nYou finished printing out all the combinations!\n{count:,} lines were printed!\nIt took {delta_time(tim)}\n")
+
     except KeyboardInterrupt:
+        
         tim = time.perf_counter()-start_time
         print(f"\nYou stopped the command.\n{count:,} lines were printed!\nIt took {delta_time(tim)}\n")
         start()
