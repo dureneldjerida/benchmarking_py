@@ -26,9 +26,9 @@ def busywork():
     global count
     start_time = time.perf_counter()
     try:
-        with open("/Users/aaatipamula/Documents/local_projects/usernames.txt", "r") as f:
+        with open("/Users/aaatipamula/Documents/vscode_projects/busywork/usernames.txt", "r") as f:
             user = f.readlines()
-            with open("/Users/aaatipamula/Documents/local_projects/files.txt", "r") as f:
+            with open("/Users/aaatipamula/Documents/vscode_projects/busywork/files.txt", "r") as f:
                 files = f.readlines()
                 for x in user:
                     x_a = x.replace('\n', '')
